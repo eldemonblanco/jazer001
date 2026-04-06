@@ -1,1 +1,188 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>METEx | Recarga de Extintores</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg,#FFD700,#FFEA00);
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:black;
+    padding:20px;
+    text-align:center;
+    border-bottom:3px solid gold;
+}
+
+header h1{
+    color:gold;
+    font-size:40px;
+    letter-spacing:3px;
+}
+
+header p{
+    color:#FFD700;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+    background:#111;
+}
+
+nav button{
+    background:linear-gradient(45deg,#FFD700,#ffae00);
+    border:none;
+    padding:12px 20px;
+    cursor:pointer;
+    font-weight:bold;
+    color:black;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+nav button:hover{
+    transform:scale(1.1);
+    background:gold;
+}
+
+/* SECTIONS */
+.section{
+    display:none;
+    padding:40px;
+    animation:fade 0.5s ease-in-out;
+}
+
+.active{
+    display:block;
+}
+
+.box{
+    background:black;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px gold;
+}
+
+/* TITLES */
+h2{
+    color:gold;
+}
+
+/* BUTTONS */
+.cta{
+    margin-top:20px;
+    background:gold;
+    color:black;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.cta:hover{
+    background:#ffcc00;
+    transform:scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:black;
+    color:gold;
+    margin-top:30px;
+}
+</style>
+
+<script>
+function showSection(id){
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>METEx</h1>
+    <p>Recarga Profesional de Extintores en Bogotá</p>
+</header>
+
+<nav>
+    <button onclick="showSection('contacto')">Contáctenos</button>
+    <button onclick="showSection('recarga')">Recarga en Línea</button>
+    <button onclick="showSection('proceso')">Procesos</button>
+    <button onclick="showSection('certificaciones')">Certificaciones</button>
+</nav>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section active">
+    <div class="box">
+        <h2>Contáctenos</h2>
+        <p>Estamos disponibles para atender tus solicitudes en Bogotá.</p>
+        <p>📞 Tel: 300 000 0000</p>
+        <p>📧 Email: contacto@metex.com</p>
+        <button class="cta">Enviar Mensaje</button>
+    </div>
+</section>
+
+<!-- RECARGA -->
+<section id="recarga" class="section">
+    <div class="box">
+        <h2>Recarga en Línea</h2>
+        <p>Solicita tu servicio de recarga de extintores de forma rápida y segura.</p>
+        <button class="cta">Solicitar Recarga</button>
+    </div>
+</section>
+
+<!-- PROCESOS -->
+<section id="proceso" class="section">
+    <div class="box">
+        <h2>Nuestro Proceso</h2>
+        <p>1. Recepción del extintor</p>
+        <p>2. Inspección técnica</p>
+        <p>3. Recarga certificada</p>
+        <p>4. Entrega con garantía</p>
+    </div>
+</section>
+
+<!-- CERTIFICACIONES -->
+<section id="certificaciones" class="section">
+    <div class="box">
+        <h2>Certificaciones</h2>
+        <p>Contamos con certificaciones bajo normativas vigentes de seguridad industrial.</p>
+        <p>✔ ICONTEC</p>
+        <p>✔ Normas NFPA</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 METEx - Todos los derechos reservados
+</footer>
+
+</body>
+</html>
